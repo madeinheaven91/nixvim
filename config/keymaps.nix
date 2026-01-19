@@ -29,19 +29,31 @@
       options.desc = "Delete other buffers";
     }
     {
-      mode = [ "n" "v" "x" ];
+      mode = [
+        "n"
+        "v"
+        "x"
+      ];
       key = "<leader>y";
       action = lib.nixvim.mkRaw "function() vim.cmd('normal! \"+y') vim.notify('Yanked to system clipboard', vim.log.levels.INFO) end";
       options.desc = "Yank to sys clipboard";
     }
     {
-      mode = [ "n" "v" "x" ];
+      mode = [
+        "n"
+        "v"
+        "x"
+      ];
       key = "<leader>x";
       action = lib.nixvim.mkRaw "function() vim.cmd('normal! \"+x') vim.notify('Yanked to system clipboard', vim.log.levels.INFO) end";
       options.desc = "Yank to sys clipboard";
     }
     {
-      mode = [ "n" "v" "x" ];
+      mode = [
+        "n"
+        "v"
+        "x"
+      ];
       key = "<leader>p";
       action = "\"+p";
       options.desc = "Paste from sys clipboard";
@@ -107,5 +119,66 @@
       action = ":Oil<CR>";
       options.desc = "Open explorer";
     }
-	];
+
+    # {
+    #   mode = [ "n" ];
+    #   key = "<leader>cf";
+    #   action = lib.nixvim.mkRaw ''
+    #     function()
+    #     	vim.lsp.buf.code_action({
+    #     		context = { only = { 'source.addMissingImports' } },
+    #     		apply = true,
+    #     	})
+    #     	vim.lsp.buf.code_action({
+    #     		context = { only = { 'source.organizeImports' } },
+    #     		apply = true,
+    #     	})
+    #     	vim.lsp.buf.format()
+    #     end
+    #   '';
+    #   options.desc = "Format";
+    # }
+    {
+      mode = [ "n" ];
+      key = "<leader>ct";
+      action = lib.nixvim.mkRaw "function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end";
+      options.desc = "Toggle inlay hints";
+    }
+    # {
+    #   mode = [ "n" ];
+    #   key = "<leader>ca";
+    #   action = lib.nixvim.mkRaw "vim.lsp.buf.code.action";
+    #   options.desc = "Code actions";
+    # }
+    {
+      mode = [ "n" ];
+      key = "<leader>cd";
+      action = lib.nixvim.mkRaw "function() vim.diagnostic.open_float({ focusable = true }) end";
+      options.desc = "Diagnostics";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>cs";
+      action = lib.nixvim.mkRaw "vim.lsp.buf.document_symbol";
+      options.desc = "Symbols";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>cr";
+      action = lib.nixvim.mkRaw "vim.lsp.buf.rename";
+      options.desc = "Rename symbol";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>cR";
+      action = lib.nixvim.mkRaw "vim.lsp.buf.references";
+      options.desc = "References";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>gd";
+      action = lib.nixvim.mkRaw "vim.lsp.buf.definition";
+      options.desc = "Go to definition";
+    }
+  ];
 }
