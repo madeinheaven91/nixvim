@@ -1,12 +1,27 @@
 { pkgs, ... }:
 {
   plugins = {
-    lsp-lines = {
+    treesitter = {
       enable = true;
+      highlight.enable = true;
+      indent.enable = true;
+      folding.enable = true;
+      grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
+        bash
+        json
+        lua
+        make
+        markdown
+        nix
+        regex
+        toml
+        rust
+        go
+        typescript
+      ];
     };
-    lsp-format = {
-      enable = true;
-    };
+    treesitter-textobjects.enable = true;
+    lsp-lines.enable = true;
     lsp = {
       enable = true;
       inlayHints = true;
@@ -33,10 +48,10 @@
           enable = true;
         };
         rust_analyzer = {
-	enable = true;
-	installCargo = false;
-	installRustc = false;
-	};
+          enable = true;
+          installCargo = false;
+          installRustc = false;
+        };
         jsonls = {
           enable = true;
         };
@@ -93,6 +108,10 @@
           };
         };
       };
+    };
+
+    none-ls = {
+      enable = true;
     };
   };
 

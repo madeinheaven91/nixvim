@@ -12,6 +12,12 @@
     }
     {
       mode = [ "n" ];
+      key = "<leader>uw";
+      action = ":set wrap!<CR>";
+      options.desc = "Toggle wrap";
+    }
+    {
+      mode = [ "n" ];
       key = "<leader>q";
       action = ":q<CR>";
       options.desc = "Quit";
@@ -120,36 +126,36 @@
       options.desc = "Open explorer";
     }
 
-    # {
-    #   mode = [ "n" ];
-    #   key = "<leader>cf";
-    #   action = lib.nixvim.mkRaw ''
-    #     function()
-    #     	vim.lsp.buf.code_action({
-    #     		context = { only = { 'source.addMissingImports' } },
-    #     		apply = true,
-    #     	})
-    #     	vim.lsp.buf.code_action({
-    #     		context = { only = { 'source.organizeImports' } },
-    #     		apply = true,
-    #     	})
-    #     	vim.lsp.buf.format()
-    #     end
-    #   '';
-    #   options.desc = "Format";
-    # }
+    {
+      mode = [ "n" ];
+      key = "<leader>cf";
+      action = lib.nixvim.mkRaw ''
+        function()
+        	vim.lsp.buf.code_action({
+        		context = { only = { 'source.addMissingImports' } },
+        		apply = true,
+        	})
+        	vim.lsp.buf.code_action({
+        		context = { only = { 'source.organizeImports' } },
+        		apply = true,
+        	})
+        	vim.lsp.buf.format()
+        end
+      '';
+      options.desc = "Format";
+    }
     {
       mode = [ "n" ];
       key = "<leader>ct";
       action = lib.nixvim.mkRaw "function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end";
       options.desc = "Toggle inlay hints";
     }
-    # {
-    #   mode = [ "n" ];
-    #   key = "<leader>ca";
-    #   action = lib.nixvim.mkRaw "vim.lsp.buf.code.action";
-    #   options.desc = "Code actions";
-    # }
+    {
+      mode = [ "n" ];
+      key = "<leader>ca";
+      action = lib.nixvim.mkRaw "vim.lsp.buf.code_action";
+      options.desc = "Code actions";
+    }
     {
       mode = [ "n" ];
       key = "<leader>cd";
@@ -179,6 +185,16 @@
       key = "<leader>gd";
       action = lib.nixvim.mkRaw "vim.lsp.buf.definition";
       options.desc = "Go to definition";
+    }
+
+    {
+      mode = "n";
+      key = "<leader>ut";
+      action = "<cmd>UndotreeToggle<CR>";
+      options = {
+        silent = true;
+        desc = "Undotree";
+      };
     }
   ];
 }

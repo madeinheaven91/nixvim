@@ -15,6 +15,7 @@
     };
 
     opts = {
+      wrap = false;
       number = true;
       relativenumber = true;
 
