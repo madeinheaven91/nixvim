@@ -18,6 +18,9 @@
         rust
         go
         typescript
+        tsx
+        html
+        css
       ];
     };
     treesitter-textobjects.enable = true;
@@ -37,6 +40,18 @@
         };
         ts_ls = {
           enable = true;
+          cmd = [
+            "typescript-language-server"
+            "--stdio"
+          ];
+          filetypes = [
+            "javascript"
+            "javascriptreact"
+            "javascript.jsx"
+            "typescript"
+            "typescriptreact"
+            "typescript.tsx"
+          ];
         };
         marksman = {
           enable = true;

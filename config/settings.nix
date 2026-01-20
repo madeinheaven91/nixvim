@@ -77,9 +77,6 @@
       # Open new split to the right of the current window
       splitright = true;
 
-      # Hide command line unless needed
-      cmdheight = 0;
-
       fillchars = {
         eob = " ";
       };
