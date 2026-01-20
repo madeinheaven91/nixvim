@@ -23,8 +23,17 @@
           "<C-k>" = "cmp.mapping.select_prev_item()";
           "<C-i>" = "cmp.mapping.scroll_docs(-4)";
           "<C-u>" = "cmp.mapping.scroll_docs(4)";
-          "<C-Tab>" = "cmp.mapping.confirm({ select = true })";
-          "<S-C-Tab>" = "cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })";
+          "<C-CR>" =
+            "cmp.mapping({
+            i = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false }),
+            c = function(fallback)
+                if cmp.visible() then
+                    cmp.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = false })
+                else
+                    fallback()
+                end
+            end
+        })";
         };
       };
     };
