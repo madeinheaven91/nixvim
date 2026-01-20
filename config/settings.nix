@@ -22,17 +22,15 @@
       # Use the system clipboard
       clipboard = "unnamedplus";
 
-      tabstop = 2;
-      softtabstop = 2;
-
-      # Use spaces instead of tabs
-      expandtab = true;
+      tabstop = 4;
+      softtabstop = 0;
+      expandtab = false;
 
       # Enable smart indentation
       smartindent = true;
 
       # Number of spaces to use for each step of (auto)indent
-      shiftwidth = 2;
+      shiftwidth = 4;
 
       # Enable break indent
       breakindent = true;

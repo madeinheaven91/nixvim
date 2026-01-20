@@ -29,15 +29,11 @@
       enable = true;
       inlayHints = true;
       servers = {
-        html = {
-          enable = true;
-        };
-        lua_ls = {
-          enable = true;
-        };
-        nil_ls = {
-          enable = true;
-        };
+        html.enable = true;
+        cssls.enable = true;
+        jsonls.enable = true;
+        lua_ls.enable = true;
+        nil_ls.enable = true;
         ts_ls = {
           enable = true;
           cmd = [
@@ -53,22 +49,13 @@
             "typescript.tsx"
           ];
         };
-        marksman = {
-          enable = true;
-        };
-        pyright = {
-          enable = true;
-        };
-        gopls = {
-          enable = true;
-        };
+        marksman.enable = true;
+        pyright.enable = true;
+        gopls.enable = true;
         rust_analyzer = {
           enable = true;
           installCargo = false;
           installRustc = false;
-        };
-        jsonls = {
-          enable = true;
         };
       };
 
