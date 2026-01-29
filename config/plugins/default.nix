@@ -9,6 +9,7 @@
     ./gitsigns.nix
     ./undotree.nix
     ./snacks.nix
+    ./windsurf.nix
 
     ./oneliners.nix
     ./extraPlugins.nix

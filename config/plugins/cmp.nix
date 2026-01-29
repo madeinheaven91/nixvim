@@ -16,6 +16,7 @@
           { name = "nvim_lsp"; }
           { name = "git"; }
           { name = "buffer"; }
+          { name = "codeium"; }
         ];
         mapping = {
           "<C-e>" = "cmp.mapping.abort()";

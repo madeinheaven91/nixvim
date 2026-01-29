@@ -196,5 +196,15 @@
         desc = "Undotree";
       };
     }
+
+    {
+      mode = "n";
+      key = "<leader>cc";
+      action = "<cmd>Codeium Chat<CR>";
+      options = {
+        silent = true;
+        desc = "Codeium chat";
+      };
+    }
   ];
 }
