@@ -21,6 +21,10 @@
         tsx
         html
         css
+        sql
+        dockerfile
+        yaml
+        python
       ];
     };
     treesitter-textobjects.enable = true;
@@ -34,6 +38,40 @@
         jsonls.enable = true;
         lua_ls.enable = true;
         nil_ls.enable = true;
+        sqls = {
+          enable = true;
+          filetypes = [
+            "sql"
+            "mysql"
+            "plsql"
+          ];
+        };
+        dockerls = {
+          enable = true;
+          filetypes = [ "dockerfile" ];
+        };
+        yamlls = {
+          enable = true;
+          filetypes = [
+            "yaml"
+            "yml"
+          ];
+          settings = {
+            yaml = {
+              schemas = {
+                # Docker Compose schema
+                "https://raw.githubusercontent.com/compose-spec/compose-spec/master/schema/compose-spec.json" =
+                  "docker-compose*.yml";
+                # Kubernetes schemas
+                "kubernetes" = "/*.yaml";
+              };
+              validate = true;
+              completion = true;
+              hover = true;
+            };
+          };
+        };
+
         ts_ls = {
           enable = true;
           cmd = [

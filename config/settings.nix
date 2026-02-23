@@ -45,10 +45,21 @@
       mouse = "a";
 
       # Set folding method to manual
-      foldmethod = "manual";
-
+      # foldmethod = "manual";
+      #
       # Disable folding by default
-      foldenable = false;
+      # foldenable = false;
+
+      # nvim-ufo settings
+      # foldcolumn = 1;
+      # foldlevel = 99;
+      # foldlevelstart = 99;
+      # foldenable = true;
+
+      # fold?
+      foldlevel = 99;
+      foldmethod = "indent";
+      foldtext = "";
 
       # Wrap long lines at a character in 'breakat'
       linebreak = true;
