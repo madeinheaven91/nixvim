@@ -25,6 +25,8 @@
         dockerfile
         yaml
         python
+		# mobile dev
+		dart
       ];
     };
     treesitter-textobjects.enable = true;
