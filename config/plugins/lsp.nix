@@ -25,8 +25,7 @@
         dockerfile
         yaml
         python
-		# mobile dev
-		dart
+        dart
       ];
     };
     treesitter-textobjects.enable = true;
@@ -40,6 +39,7 @@
         jsonls.enable = true;
         lua_ls.enable = true;
         nil_ls.enable = true;
+        dartls.enable = true;
         sqls = {
           enable = true;
           filetypes = [
