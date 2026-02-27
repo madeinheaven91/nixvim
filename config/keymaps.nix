@@ -25,7 +25,7 @@
     {
       mode = [ "n" ];
       key = "<leader>bq";
-      action = ":bd<CR>";
+      action = ":bp|bd #<CR>";
       options.desc = "Delete buffer";
     }
     {
@@ -33,6 +33,18 @@
       key = "<leader>bo";
       action = ":%bd|e#<CR>";
       options.desc = "Delete other buffers";
+    }
+    {
+      mode = [ "n" ];
+      key = ''<leader>"'';
+      action = ":split<CR>";
+      options.desc = "Horizontal split";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>%";
+      action = ":vsplit<CR>";
+      options.desc = "Vertical split";
     }
     {
       mode = [
