@@ -1,6 +1,10 @@
 { pkgs, ... }:
 {
   config = {
+    colorschemes.onedark = {
+      enable = true;
+      settings.style = "light";
+    };
     extraConfigLuaPre =
       # lua
       ''
