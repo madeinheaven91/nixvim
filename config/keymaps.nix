@@ -25,7 +25,7 @@
     {
       mode = [ "n" ];
       key = "<leader>bq";
-      action = ":CloseBuffer<CR>";
+      action = ":<C-U>bprevious <bar> bdelete #<CR>";
       options.desc = "Delete buffer";
     }
     {
