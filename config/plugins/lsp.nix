@@ -27,6 +27,7 @@
         python
         dart
         c_sharp
+        xml
       ];
     };
     treesitter-textobjects.enable = true;
@@ -41,7 +42,23 @@
         lua_ls.enable = true;
         nil_ls.enable = true;
         dartls.enable = true;
-        omnisharp.enable = true;
+        omnisharp = {
+          enable = true;
+          settings = {
+            enableRoslynAnalyzers = true;
+            enableEditorConfigSupport = true;
+            organizeImportsOnFormat = true;
+            enableImportCompletion = true;
+          };
+        };
+        lemminx = {
+          enable = true;
+          filetypes = [
+            "xml"
+            "xaml"
+            "axaml"
+          ];
+        };
         sqls = {
           enable = true;
           filetypes = [
