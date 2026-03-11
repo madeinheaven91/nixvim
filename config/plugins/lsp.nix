@@ -26,6 +26,7 @@
         yaml
         python
         dart
+        c_sharp
       ];
     };
     treesitter-textobjects.enable = true;
@@ -40,6 +41,7 @@
         lua_ls.enable = true;
         nil_ls.enable = true;
         dartls.enable = true;
+        omnisharp.enable = true;
         sqls = {
           enable = true;
           filetypes = [
