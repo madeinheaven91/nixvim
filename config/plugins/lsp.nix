@@ -42,14 +42,8 @@
         lua_ls.enable = true;
         nil_ls.enable = true;
         dartls.enable = true;
-        omnisharp = {
+        csharp_ls = {
           enable = true;
-          settings = {
-            enableRoslynAnalyzers = true;
-            enableEditorConfigSupport = true;
-            organizeImportsOnFormat = true;
-            enableImportCompletion = true;
-          };
         };
         lemminx = {
           enable = true;
@@ -57,6 +51,10 @@
             "xml"
             "xaml"
             "axaml"
+            "xsd"
+            "xsl"
+            "xslt"
+            "svg"
           ];
         };
         sqls = {
