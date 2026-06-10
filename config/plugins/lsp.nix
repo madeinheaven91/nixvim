@@ -19,6 +19,7 @@
         go
         typescript
         tsx
+        svelte
         html
         css
         sql
@@ -90,7 +91,6 @@
             };
           };
         };
-
         ts_ls = {
           enable = true;
           cmd = [
@@ -104,6 +104,12 @@
             "typescript"
             "typescriptreact"
             "typescript.tsx"
+          ];
+        };
+        svelte = {
+          enable = true;
+          filetypes = [
+            "svelte"
           ];
         };
         marksman.enable = true;
