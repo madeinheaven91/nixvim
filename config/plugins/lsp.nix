@@ -5,7 +5,6 @@
       enable = true;
       highlight.enable = true;
       indent.enable = true;
-      folding.enable = true;
       grammarPackages = with pkgs.vimPlugins.nvim-treesitter.builtGrammars; [
         bash
         json
@@ -178,6 +177,8 @@
     none-ls = {
       enable = true;
     };
+
+    nvim-ufo.enable = true;
   };
 
   extraConfigLua = ''
@@ -202,5 +203,11 @@
     require('lspconfig.ui.windows').default_options = {
       border = _border
     }
+
+    require('ufo').setup({
+      provider_selector = function(bufnr, filetype, buftype)
+        return { "lsp", "treesitter" }
+      end
+    })
   '';
 }

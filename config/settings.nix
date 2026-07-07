@@ -48,22 +48,11 @@
       # Enable mouse support
       mouse = "a";
 
-      # Set folding method to manual
-      # foldmethod = "manual";
-      #
-      # Disable folding by default
-      # foldenable = false;
-
       # nvim-ufo settings
       # foldcolumn = 1;
-      # foldlevel = 99;
-      # foldlevelstart = 99;
-      # foldenable = true;
-
-      # fold?
       foldlevel = 99;
-      foldmethod = "indent";
-      foldtext = "";
+      foldlevelstart = 99;
+      foldenable = true;
 
       # Wrap long lines at a character in 'breakat'
       linebreak = true;
@@ -77,9 +66,6 @@
       timeoutlen = 300;
 
       termguicolors = true;
-
-      # Don't show mode in the command line
-      showmode = false;
 
       # Open new split below the current window
       splitbelow = true;
