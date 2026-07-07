@@ -28,7 +28,7 @@
 
       tabstop = 4;
       softtabstop = 0;
-      expandtab = false;
+      expandtab = true;
 
       # Enable smart indentation
       smartindent = true;
