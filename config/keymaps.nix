@@ -172,7 +172,13 @@
       mode = [ "n" ];
       key = "<leader>cd";
       action = lib.nixvim.mkRaw "function() vim.diagnostic.open_float({ focusable = true }) end";
-      options.desc = "Diagnostics";
+      options.desc = "Line diagnostics";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>cD";
+      action = lib.nixvim.mkRaw "function() MiniExtra.pickers.diagnostic({ scope = 'all' }) end";
+      options.desc = "Workspace diagnostics";
     }
     {
       mode = [ "n" ];
@@ -211,11 +217,11 @@
 
     {
       mode = "n";
-      key = "<leader>cc";
-      action = "<cmd>Codeium Chat<CR>";
+      key = "<leader>cR";
+      action = "<cmd>ClaudeCodeResume<CR>";
       options = {
         silent = true;
-        desc = "Codeium chat";
+        desc = "Claude Code: Resume";
       };
     }
   ];
