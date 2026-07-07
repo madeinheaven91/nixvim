@@ -17,6 +17,7 @@
           { name = "git"; }
           { name = "buffer"; }
           { name = "codeium"; }
+          { name = "latex_symbols"; }
         ];
         mapping = {
           "<C-e>" = "cmp.mapping.abort()";
@@ -32,6 +33,9 @@
       enable = true;
     };
     cmp-buffer = {
+      enable = true;
+    };
+    cmp-latex-symbols = {
       enable = true;
     };
   };
