@@ -7,5 +7,6 @@
     wakatime.enable = true;
     illuminate.enable = true;
     mark-radar.enable = true;
+    lean.enable = true;
   };
 }

@@ -119,6 +119,8 @@
           installCargo = false;
           installRustc = false;
         };
+
+        qmlls.enable = true;
       };
 
       keymaps = {
