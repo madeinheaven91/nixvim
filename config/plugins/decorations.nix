@@ -1,8 +1,28 @@
 { lib, ... }:
 {
   plugins = {
-    mini-pick.enable = true;
+    web-devicons.enable = true;
+    oil-git-status.enable = true;
+    render-markdown.enable = true;
+    illuminate.enable = true; # highlight words under cursor
+    mark-radar.enable = true; # highlight marks in a buffer
     mini-extra.enable = true;
+
+    # qol
+    snacks = {
+      enable = true;
+      settings = {
+        dim.enabled = true;
+        bufdelete.enabled = true;
+        bigfile.enabled = true;
+        notifier.enabled = true;
+        quickfile.enabled = true;
+        scope.enabled = true;
+        statuscolumn.enabled = true;
+      };
+    };
+
+    # indent lines highlighting
     mini-indentscope = {
       enable = true;
       settings = {
@@ -26,6 +46,8 @@
         symbol = "│";
       };
     };
+
+    # highlight patterns like TODO, FIXME, NOTE, HACK
     mini-hipatterns = {
       enable = true;
       settings = {
@@ -42,6 +64,21 @@
             hex_color = require 'mini.hipatterns'.gen_highlighter.hex_color(),
           }
         '';
+      };
+    };
+
+    # keymap helper
+    which-key = {
+      enable = true;
+      settings = {
+        delay = 300;
+        preset = "helix";
+        icons = {
+          colors = false;
+          mappings = false;
+          separator = "-";
+          breadcrumb = ">";
+        };
       };
     };
   };

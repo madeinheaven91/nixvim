@@ -39,4 +39,17 @@
       enable = true;
     };
   };
+
+  # windsurf completions
+  plugins.windsurf-nvim = {
+    enable = true;
+    settings = {
+      enable_chat = false;
+      enable_cmp_source = true;
+      virtual_text = {
+        enabled = true;
+        idle_delay = 75;
+      };
+    };
+  };
 }

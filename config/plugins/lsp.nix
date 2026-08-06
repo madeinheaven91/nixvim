@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 {
   plugins = {
     treesitter = {
@@ -186,17 +186,19 @@
   extraConfigLua = ''
     local _border = "rounded"
 
-    vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-      vim.lsp.handlers.hover, {
-        border = _border
-      }
-    )
+    local orig_hover = vim.lsp.buf.hover
+    vim.lsp.buf.hover = function(config)
+      config = config or {}
+      config.border = config.border or _border
+      return orig_hover(config)
+    end
 
-    vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-      vim.lsp.handlers.signature_help, {
-        border = _border
-      }
-    )
+    local orig_signature_help = vim.lsp.buf.signature_help
+    vim.lsp.buf.signature_help = function(config)
+      config = config or {}
+      config.border = config.border or _border
+      return orig_signature_help(config)
+    end
 
     vim.diagnostic.config{
       float={border=_border}
@@ -212,4 +214,67 @@
       end
     })
   '';
+
+  keymaps = [
+    {
+      mode = [ "n" ];
+      key = "<leader>cf";
+      action = lib.nixvim.mkRaw ''
+        function()
+        	vim.lsp.buf.code_action({
+        		context = { only = { 'source.addMissingImports' } },
+        		apply = true,
+        	})
+        	vim.lsp.buf.code_action({
+        		context = { only = { 'source.organizeImports' } },
+        		apply = true,
+        	})
+        	vim.lsp.buf.format()
+        end
+      '';
+      options.desc = "Format";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>ct";
+      action = lib.nixvim.mkRaw "function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end";
+      options.desc = "Toggle inlay hints";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>ca";
+      action = lib.nixvim.mkRaw "vim.lsp.buf.code_action";
+      options.desc = "Code actions";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>cd";
+      action = lib.nixvim.mkRaw "function() vim.diagnostic.open_float({ focusable = true }) end";
+      options.desc = "Line diagnostics";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>cD";
+      action = lib.nixvim.mkRaw "function() MiniExtra.pickers.diagnostic({ scope = 'all' }) end";
+      options.desc = "Workspace diagnostics";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>cr";
+      action = lib.nixvim.mkRaw "vim.lsp.buf.rename";
+      options.desc = "Rename symbol";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>gr";
+      action = lib.nixvim.mkRaw "vim.lsp.buf.references";
+      options.desc = "References";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>gd";
+      action = lib.nixvim.mkRaw "vim.lsp.buf.definition";
+      options.desc = "Go to definition";
+    }
+  ];
 }

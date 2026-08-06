@@ -21,4 +21,7 @@
       mode = "split";
     };
   };
+
+  lean.enable = true;
+  wakatime.enable = true;
 }
