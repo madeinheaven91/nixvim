@@ -19,6 +19,10 @@
         quickfile.enabled = true;
         scope.enabled = true;
         statuscolumn.enabled = true;
+
+        # wrap long messages instead of truncating them
+        styles.notification_history.wo.wrap = true;
+        styles.notification.wo.wrap = true;
       };
     };
 

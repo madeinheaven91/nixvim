@@ -1,3 +1,5 @@
+{ lib, ... }:
+
 {
   plugins = {
     oil.enable = true; # filebrowser
@@ -113,6 +115,12 @@
       key = "<leader>fg";
       action = ":Pick grep_live<CR>";
       options.desc = "List grep live";
+    }
+    {
+      mode = [ "n" ];
+      key = "<leader>cn";
+      action = lib.nixvim.mkRaw "Snacks.notifier.show_history";
+      options.desc = "Notification history";
     }
   ];
 }
