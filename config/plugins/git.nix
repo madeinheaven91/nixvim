@@ -48,13 +48,13 @@
       mode = [ "n" ];
       key = "<leader>Gb";
       action = ":Gitsigns blame_line<CR>";
-      options.desc = "List git files";
+      options.desc = "Git blame line";
     }
     {
       mode = [ "n" ];
       key = "<leader>GB";
       action = ":Gitsigns blame<CR>";
-      options.desc = "List git files";
+      options.desc = "Git blame";
     }
   ];
 }

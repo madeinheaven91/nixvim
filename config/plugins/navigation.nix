@@ -70,7 +70,7 @@
       mode = "n";
       key = "<leader>cs";
       action = "<cmd>AerialToggle<CR>";
-      options.desc = "Aerial: toggle outline";
+      options.desc = "Code symbols";
     }
     {
       mode = [ "n" ];
