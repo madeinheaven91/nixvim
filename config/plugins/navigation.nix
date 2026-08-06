@@ -47,7 +47,7 @@
     };
 
     # undotree
-    plugins.undotree = {
+    undotree = {
       enable = true;
       settings = {
         autoOpenDiff = true;
